@@ -1,0 +1,24 @@
+[package]
+name = "casio-calc"
+version = "1.0.0"
+edition = "2021"
+authors = ["56tytt - שי קדוש הנדסת תוכנה אשקלון"]
+description = "CASIO fx Scientific Calculator - 3 Models (fx-82MS, fx-991ES, fx-CG50)"
+repository = "https://github.com/56tytt/casio-calc"
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "casio-calc"
+path = "src/main.rs"
+
+[dependencies]
+eframe = { version = "0.27", features = ["default"] }
+egui = "0.27"
+egui_extras = "0.27"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+strip = true
